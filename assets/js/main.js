@@ -1,3 +1,4 @@
+	
 	//var gameboard = ["X", "X", "X", "O", "O", "O", "O", "X", "X"];
 	var gameboard = ["", "", "", "", "", "", "", "", ""]
 	var userSymbol = "X";
@@ -6,6 +7,7 @@
 	var victoryLines = [[0, 1, 2],[3, 4, 5],[6, 7, 8],[0, 3, 6],[1, 4, 7],[2, 5, 8],[0, 4, 8],[6, 4, 2]];
 	var moveCount = 0;
 	var gameActive = true;
+
 $(document).ready(function () {
 	//button asisgnments
 	$("#field0").click(function(){
@@ -45,7 +47,23 @@ $(document).ready(function () {
 	$("#resetButton").click(function(){
 		resetState();
 	});
+	$("#selectX").click(function(){
+		selectUserSymbol("X");
+	});	
+	$("#selectO").click(function(){
+		selectUserSymbol("O");
+	});	
 });
+
+//use below for click instead, can use val. and value="x" for
+/* $("td").click(function(){
+  	var tile = $(this).attr('id');
+  	if(boardArr[tile]==='#'){
+  		
+  		humanTurn(tile);
+  		
+  	}
+  })*/
 
 	//update display
 	function displayGameboard(){
@@ -63,9 +81,14 @@ $(document).ready(function () {
 			for (var k = 0; k<3; k += 1){
 				if (gameboard[victoryLines[j][k]] !== symbol){victoryStatus = false;}
 			}
+			//if one of victory conditions was achieved show victory text and reset
 			if (victoryStatus === true){
 				gameActive = false;
-				$(".main-box").prepend(symbol + " won!");
+				$(".victory-text").html(symbol + " won!").css("visibility", "visible");
+
+				setTimeout(function(){
+					resetState();
+				}, 2000);
 			}
 		}
 
@@ -90,7 +113,7 @@ $(document).ready(function () {
 		do {
 			randomPosition = getRandomInt(0, 8);
 		} while (gameboard[randomPosition] !== "");
-		gameboard[randomPosition] = "O";
+		gameboard[randomPosition] = enemySymbol;
 		incrementMoves();
 		victoryCheck(enemySymbol);
 		}
@@ -105,11 +128,26 @@ $(document).ready(function () {
 	function incrementMoves(){
 		moveCount += 1;
 	}
-
+	//reset game
 	function resetState(){
 		gameboard = ["", "", "", "", "", "", "", "", ""]
 		turns = 0;
 		moveCount = 0;
 		gameActive = true;
+		$(".victory-text").css("visibility", "hidden");
 		displayGameboard();
+	}
+
+	function selectUserSymbol(symbol){
+		userSymbol = symbol;
+		if (symbol === "X"){
+			enemySymbol = "O";
+		}
+		else{
+			enemySymbol = "X";
+		}
+		$(".setup-box").fadeOut(500, function(){
+			$(".main-box").fadeIn(500);
+		});
+
 	}

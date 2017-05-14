@@ -11,8 +11,17 @@ h1{
 	font-weight: 100;
 }
 .main-box{
-	margin-top: 5rem;
-	width: 50%;	
+	margin: 0 auto;
+	margin-top: 3rem;
+	width: 500px;	
+	display: none;
+}
+.setup-box{
+	margin-top: 8rem;
+}
+.victory-text{
+	font-size: 2rem;
+	visibility: hidden;
 }
 .countdown-display{
 	margin: auto;
@@ -21,9 +30,9 @@ h1{
 	font-size: 3rem;
 }
 .btn{
-padding: 3rem;
+width: 6rem;
+height: 6rem;
 margin: 0.2rem 0.1rem;
-}
-.row{
-	
+background-color: lightgrey;
+outline: none;
 }
