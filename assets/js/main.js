@@ -1,12 +1,12 @@
-	
-	//var gameboard = ["X", "X", "X", "O", "O", "O", "O", "X", "X"];
-	var gameboard = ["", "", "", "", "", "", "", "", ""]
-	var userSymbol = "X";
-	var enemySymbol = "O";
-	var turns = 0;
-	var victoryLines = [[0, 1, 2],[3, 4, 5],[6, 7, 8],[0, 3, 6],[1, 4, 7],[2, 5, 8],[0, 4, 8],[6, 4, 2]];
-	var moveCount = 0;
-	var gameActive = true;
+
+
+	let gameboard = ["", "", "", "", "", "", "", "", ""]
+	let userSymbol = "X";
+	let enemySymbol = "O";
+	let turns = 0;
+	const victoryLines = [[0, 1, 2],[3, 4, 5],[6, 7, 8],[0, 3, 6],[1, 4, 7],[2, 5, 8],[0, 4, 8],[6, 4, 2]];
+	let moveCount = 0;
+	let gameActive = true;
 
 $(document).ready(function () {
 	//button asisgnments

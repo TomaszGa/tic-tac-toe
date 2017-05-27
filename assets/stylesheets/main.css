@@ -2,6 +2,8 @@ body{
 	font-family: "Montserrat", arial;
 	text-align: center;
 	background-color: white;
+	background-color: #ffffff;
+background-image: url("data:image/svg+xml,%3Csvg width='64' height='64' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 16c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm0-2c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zm33.414-6l5.95-5.95L45.95.636 40 6.586 34.05.636 32.636 2.05 38.586 8l-5.95 5.95 1.414 1.414L40 9.414l5.95 5.95 1.414-1.414L41.414 8zM40 48c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm0-2c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zM9.414 40l5.95-5.95-1.414-1.414L8 38.586l-5.95-5.95L.636 34.05 6.586 40l-5.95 5.95 1.414 1.414L8 41.414l5.95 5.95 1.414-1.414L9.414 40z' fill='%23d4c9e5' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
 	width: 100%;
 
 }
@@ -19,6 +21,9 @@ h1{
 .setup-box{
 	margin-top: 8rem;
 }
+.symbol-select{
+	border: 1px solid lightgrey;
+}
 .victory-text{
 	font-size: 2rem;
 	visibility: hidden;
@@ -30,9 +35,22 @@ h1{
 	font-size: 3rem;
 }
 .btn{
+border-radius: 0;
 width: 6rem;
 height: 6rem;
-margin: 0.2rem 0.1rem;
-background-color: lightgrey;
+margin: 0;
 outline: none;
+background: white;
+}
+.horizontal-border{
+	border-left: 2px solid black;
+	border-right: 2px solid black;
+}
+.vertical-border{
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+}
+#resetButton{
+	margin-top: 1rem;
+	border: 1px solid lightgrey;
 }
